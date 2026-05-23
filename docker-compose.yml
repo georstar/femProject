@@ -4,6 +4,7 @@ services:
   db:
     container_name: "workoutDB"
     image: postgres:12.4-alpine
+    restart: unless-stopped
     volumes:
       - "./database/postgres-data:/var/lib/postgresql/data:rw"
     ports:
@@ -12,5 +13,4 @@ services:
       POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
-    restart: unless-stopped
     
