@@ -4,13 +4,14 @@ services:
   db:
     container_name: "workoutDB"
     image: postgres:12.4-alpine
-    restart: unless-stopped
     volumes:
       - "./database/postgres-data:/var/lib/postgresql/data:rw"
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
-      POSTGRES_DB: "postgres"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: unless-stopped
+
     
